@@ -1,0 +1,652 @@
+https://wiki.hamburg.ccc.de/ChaosVPN:DebianHowto
+
+jack@jack:~$ apt-get install tinc iproute libssl0.9.8 zlib1g
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+jack@jack:~$ apt-get install tinc iproute2
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+jack@jack:~$ sudo apt-get install tinc
+[sudo] password for jack: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  gir1.2-geocodeglib-1.0 gnome-software-common kpeople-vcard libcodec2-0.8.1
+  libenchant1c2a libfakekey0 libfprint-2-tod1 libgit2-27 libgweather-3-15 libilmbase23
+  libkf5pulseaudioqt2 liblivemedia64 libtss2-udev python3-click python3-colorama
+  qml-module-org-kde-people qtcore4-l10n
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  tinc
+0 upgraded, 1 newly installed, 0 to remove and 10 not upgraded.
+Need to get 174 kB of archives.
+After this operation, 642 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/universe amd64 tinc amd64 1.0.36-1 [174 kB]
+Fetched 174 kB in 1s (285 kB/s)
+Selecting previously unselected package tinc.
+(Reading database ... 520107 files and directories currently installed.)
+Preparing to unpack .../tinc_1.0.36-1_amd64.deb ...
+Unpacking tinc (1.0.36-1) ...
+Setting up tinc (1.0.36-1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/tinc.service → /lib/systemd/system/tinc.service.
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for install-info (6.7.0.dfsg.2-5) ...
+Processing triggers for doc-base (0.10.9) ...
+Processing 1 added doc-base file...
+Processing triggers for systemd (245.4-4ubuntu3.2) ...
+jack@jack:~$ apt-get install tinc iproute2
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+jack@jack:~$ apt-get install tinc iproute2
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+jack@jack:~$ sudo apt-get install tinc iproute2
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+iproute2 is already the newest version (5.5.0-1ubuntu1).
+iproute2 set to manually installed.
+tinc is already the newest version (1.0.36-1).
+The following packages were automatically installed and are no longer required:
+  gir1.2-geocodeglib-1.0 gnome-software-common kpeople-vcard libcodec2-0.8.1
+  libenchant1c2a libfakekey0 libfprint-2-tod1 libgit2-27 libgweather-3-15 libilmbase23
+  libkf5pulseaudioqt2 liblivemedia64 libtss2-udev python3-click python3-colorama
+  qml-module-org-kde-people qtcore4-l10n
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 10 not upgraded.
+jack@jack:~$ sudo apt-get install build-essential git bison flex libssl-dev zlib1g-dev debhelper devscripts
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+build-essential is already the newest version (12.8ubuntu1).
+build-essential set to manually installed.
+debhelper is already the newest version (12.10ubuntu1).
+debhelper set to manually installed.
+zlib1g-dev is already the newest version (1:1.2.11.dfsg-2ubuntu1).
+zlib1g-dev set to manually installed.
+The following packages were automatically installed and are no longer required:
+  gir1.2-geocodeglib-1.0 gnome-software-common kpeople-vcard libcodec2-0.8.1
+  libenchant1c2a libfakekey0 libfprint-2-tod1 libgit2-27 libgweather-3-15 libilmbase23
+  libkf5pulseaudioqt2 liblivemedia64 libtss2-udev python3-click python3-colorama
+  qml-module-org-kde-people qtcore4-l10n
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  at dctrl-tools dput git-man libarray-intspan-perl libcommon-sense-perl
+  libconst-fast-perl libcontextual-return-perl libdistro-info-perl liberror-perl
+  libfile-chdir-perl libfl-dev libfl2 libgetopt-long-descriptive-perl libgit-wrapper-perl
+  libgitlab-api-v4-perl libhash-fieldhash-perl libhttp-tiny-multipart-perl
+  libio-prompter-perl libjson-perl libjson-xs-perl liblog-any-adapter-screen-perl
+  liblog-any-perl libmoox-struct-perl libnumber-range-perl libobject-id-perl
+  libpath-iterator-rule-perl libpod-constants-perl libre-engine-re2-perl
+  libregexp-pattern-license-perl libregexp-pattern-perl libsort-versions-perl
+  libstring-copyright-perl libstring-escape-perl libstring-shellquote-perl
+  libterm-readkey-perl libtypes-serialiser-perl libwant-perl licensecheck python3-magic
+  python3-unidiff wdiff
+Suggested packages:
+  default-mta | mail-transport-agent bison-doc debtags adequate autopkgtest
+  bls-standalone bsd-mailx | mailx check-all-the-things cvs-buildpackage devscripts-el
+  diffoscope disorderfs dose-extra duck faketime gnuplot how-can-i-help libdbd-pg-perl
+  libnet-smtps-perl libterm-size-perl libyaml-syck-perl mozilla-devscripts mutt piuparts
+  postgresql-client quilt ratt reprotest svn-buildpackage w3m debian-keyring equivs
+  libsoap-lite-perl mini-dinstall flex-doc git-daemon-run | git-daemon-sysvinit git-doc
+  git-el git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn libossp-uuid-perl
+  libssl-doc wdiff-doc
+The following NEW packages will be installed:
+  at bison dctrl-tools devscripts dput flex git git-man libarray-intspan-perl
+  libcommon-sense-perl libconst-fast-perl libcontextual-return-perl libdistro-info-perl
+  liberror-perl libfile-chdir-perl libfl-dev libfl2 libgetopt-long-descriptive-perl
+  libgit-wrapper-perl libgitlab-api-v4-perl libhash-fieldhash-perl
+  libhttp-tiny-multipart-perl libio-prompter-perl libjson-perl libjson-xs-perl
+  liblog-any-adapter-screen-perl liblog-any-perl libmoox-struct-perl libnumber-range-perl
+  libobject-id-perl libpath-iterator-rule-perl libpod-constants-perl
+  libre-engine-re2-perl libregexp-pattern-license-perl libregexp-pattern-perl
+  libsort-versions-perl libssl-dev libstring-copyright-perl libstring-escape-perl
+  libstring-shellquote-perl libterm-readkey-perl libtypes-serialiser-perl libwant-perl
+  licensecheck python3-magic python3-unidiff wdiff
+0 upgraded, 47 newly installed, 0 to remove and 10 not upgraded.
+Need to get 10.1 MB of archives.
+After this operation, 56.2 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 flex amd64 2.6.4-6.2 [317 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/main amd64 libfl2 amd64 2.6.4-6.2 [11.5 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal/main amd64 at amd64 3.1.23-1ubuntu1 [38.7 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal/main amd64 bison amd64 2:3.5.1+dfsg-1 [657 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal/main amd64 dctrl-tools amd64 2.24-3 [61.5 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal/main amd64 wdiff amd64 1.2.2-2build1 [29.8 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal/main amd64 devscripts amd64 2.20.2ubuntu2 [940 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal/main amd64 dput all 1.0.3ubuntu1 [42.3 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal/main amd64 liberror-perl all 0.17029-1 [26.5 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal/main amd64 git-man all 1:2.25.1-1ubuntu3 [884 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal/main amd64 git amd64 1:2.25.1-1ubuntu3 [4,554 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal/main amd64 libarray-intspan-perl all 2.003-1 [23.3 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal/main amd64 libcommon-sense-perl amd64 3.74-2build6 [20.1 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal/main amd64 libconst-fast-perl all 0.014-1 [7,958 B]
+Get:15 http://archive.ubuntu.com/ubuntu focal/main amd64 libwant-perl amd64 0.29-1build4 [24.2 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal/main amd64 libcontextual-return-perl all 0.004014-2 [53.1 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal/main amd64 libdistro-info-perl all 0.23ubuntu1 [4,668 B]
+Get:18 http://archive.ubuntu.com/ubuntu focal/main amd64 libfile-chdir-perl all 0.1008-1 [11.7 kB]
+Get:19 http://archive.ubuntu.com/ubuntu focal/main amd64 libfl-dev amd64 2.6.4-6.2 [6,316 B]
+Get:20 http://archive.ubuntu.com/ubuntu focal/main amd64 libgetopt-long-descriptive-perl all 0.104-1 [24.6 kB]
+Get:21 http://archive.ubuntu.com/ubuntu focal/main amd64 libsort-versions-perl all 1.62-1 [9,294 B]
+Get:22 http://archive.ubuntu.com/ubuntu focal/main amd64 libgit-wrapper-perl all 0.048-1 [29.9 kB]
+Get:23 http://archive.ubuntu.com/ubuntu focal/main amd64 libhttp-tiny-multipart-perl all 0.08-1 [8,488 B]
+Get:24 http://archive.ubuntu.com/ubuntu focal/main amd64 libio-prompter-perl all 0.004015-1 [58.1 kB]
+Get:25 http://archive.ubuntu.com/ubuntu focal/main amd64 libjson-perl all 4.02000-2 [80.9 kB]
+Get:26 http://archive.ubuntu.com/ubuntu focal/main amd64 liblog-any-perl all 1.708-1 [67.8 kB]
+Get:27 http://archive.ubuntu.com/ubuntu focal/main amd64 liblog-any-adapter-screen-perl all 0.140-1 [12.1 kB]
+Get:28 http://archive.ubuntu.com/ubuntu focal/main amd64 libgitlab-api-v4-perl all 0.25-1 [83.8 kB]
+Get:29 http://archive.ubuntu.com/ubuntu focal/main amd64 libhash-fieldhash-perl amd64 0.15-1build2 [16.9 kB]
+Get:30 http://archive.ubuntu.com/ubuntu focal/main amd64 libtypes-serialiser-perl all 1.0-1 [12.1 kB]
+Get:31 http://archive.ubuntu.com/ubuntu focal/main amd64 libjson-xs-perl amd64 4.020-1build1 [83.7 kB]
+Get:32 http://archive.ubuntu.com/ubuntu focal/main amd64 libobject-id-perl all 0.1.2-2ubuntu1 [15.9 kB]
+Get:33 http://archive.ubuntu.com/ubuntu focal/main amd64 libmoox-struct-perl all 0.017-1 [23.4 kB]
+Get:34 http://archive.ubuntu.com/ubuntu focal/main amd64 libnumber-range-perl all 0.12-1 [8,556 B]
+Get:35 http://archive.ubuntu.com/ubuntu focal/main amd64 libpath-iterator-rule-perl all 1.014-1 [49.5 kB]
+Get:36 http://archive.ubuntu.com/ubuntu focal/main amd64 libpod-constants-perl all 0.19-1 [16.0 kB]
+Get:37 http://archive.ubuntu.com/ubuntu focal/main amd64 libre-engine-re2-perl amd64 0.13-5 [16.2 kB]
+Get:38 http://archive.ubuntu.com/ubuntu focal/main amd64 libregexp-pattern-license-perl all 3.2.0-1 [36.2 kB]
+Get:39 http://archive.ubuntu.com/ubuntu focal/main amd64 libregexp-pattern-perl all 0.2.12-1 [17.1 kB]
+Get:40 http://archive.ubuntu.com/ubuntu focal/main amd64 libssl-dev amd64 1.1.1f-1ubuntu2 [1,582 kB]
+Get:41 http://archive.ubuntu.com/ubuntu focal/main amd64 libstring-copyright-perl all 0.003006-1 [9,608 B]
+Get:42 http://archive.ubuntu.com/ubuntu focal/main amd64 libstring-escape-perl all 2010.002-2 [17.6 kB]
+Get:43 http://archive.ubuntu.com/ubuntu focal/main amd64 libstring-shellquote-perl all 1.04-1 [12.0 kB]
+Get:44 http://archive.ubuntu.com/ubuntu focal/main amd64 libterm-readkey-perl amd64 2.38-1build1 [24.6 kB]
+Get:45 http://archive.ubuntu.com/ubuntu focal/main amd64 licensecheck all 3.0.45-1 [23.9 kB]
+Get:46 http://archive.ubuntu.com/ubuntu focal/main amd64 python3-unidiff all 0.5.5-2 [9,180 B]
+Get:47 http://archive.ubuntu.com/ubuntu focal/main amd64 python3-magic all 2:0.4.15-3 [9,376 B]
+Fetched 10.1 MB in 3s (3,495 kB/s)         
+Extracting templates from packages: 100%
+Selecting previously unselected package flex.
+(Reading database ... 520194 files and directories currently installed.)
+Preparing to unpack .../00-flex_2.6.4-6.2_amd64.deb ...
+Unpacking flex (2.6.4-6.2) ...
+Selecting previously unselected package libfl2:amd64.
+Preparing to unpack .../01-libfl2_2.6.4-6.2_amd64.deb ...
+Unpacking libfl2:amd64 (2.6.4-6.2) ...
+Selecting previously unselected package at.
+Preparing to unpack .../02-at_3.1.23-1ubuntu1_amd64.deb ...
+Unpacking at (3.1.23-1ubuntu1) ...
+Selecting previously unselected package bison.
+Preparing to unpack .../03-bison_2%3a3.5.1+dfsg-1_amd64.deb ...
+Unpacking bison (2:3.5.1+dfsg-1) ...
+Selecting previously unselected package dctrl-tools.
+Preparing to unpack .../04-dctrl-tools_2.24-3_amd64.deb ...
+Unpacking dctrl-tools (2.24-3) ...
+Selecting previously unselected package wdiff.
+Preparing to unpack .../05-wdiff_1.2.2-2build1_amd64.deb ...
+Unpacking wdiff (1.2.2-2build1) ...
+Selecting previously unselected package devscripts.
+Preparing to unpack .../06-devscripts_2.20.2ubuntu2_amd64.deb ...
+Unpacking devscripts (2.20.2ubuntu2) ...
+Selecting previously unselected package dput.
+Preparing to unpack .../07-dput_1.0.3ubuntu1_all.deb ...
+Unpacking dput (1.0.3ubuntu1) ...
+Selecting previously unselected package liberror-perl.
+Preparing to unpack .../08-liberror-perl_0.17029-1_all.deb ...
+Unpacking liberror-perl (0.17029-1) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../09-git-man_1%3a2.25.1-1ubuntu3_all.deb ...
+Unpacking git-man (1:2.25.1-1ubuntu3) ...
+Selecting previously unselected package git.
+Preparing to unpack .../10-git_1%3a2.25.1-1ubuntu3_amd64.deb ...
+Unpacking git (1:2.25.1-1ubuntu3) ...
+Selecting previously unselected package libarray-intspan-perl.
+Preparing to unpack .../11-libarray-intspan-perl_2.003-1_all.deb ...
+Unpacking libarray-intspan-perl (2.003-1) ...
+Selecting previously unselected package libcommon-sense-perl.
+Preparing to unpack .../12-libcommon-sense-perl_3.74-2build6_amd64.deb ...
+Unpacking libcommon-sense-perl (3.74-2build6) ...
+Selecting previously unselected package libconst-fast-perl.
+Preparing to unpack .../13-libconst-fast-perl_0.014-1_all.deb ...
+Unpacking libconst-fast-perl (0.014-1) ...
+Selecting previously unselected package libwant-perl.
+Preparing to unpack .../14-libwant-perl_0.29-1build4_amd64.deb ...
+Unpacking libwant-perl (0.29-1build4) ...
+Selecting previously unselected package libcontextual-return-perl.
+Preparing to unpack .../15-libcontextual-return-perl_0.004014-2_all.deb ...
+Unpacking libcontextual-return-perl (0.004014-2) ...
+Selecting previously unselected package libdistro-info-perl.
+Preparing to unpack .../16-libdistro-info-perl_0.23ubuntu1_all.deb ...
+Unpacking libdistro-info-perl (0.23ubuntu1) ...
+Selecting previously unselected package libfile-chdir-perl.
+Preparing to unpack .../17-libfile-chdir-perl_0.1008-1_all.deb ...
+Unpacking libfile-chdir-perl (0.1008-1) ...
+Selecting previously unselected package libfl-dev:amd64.
+Preparing to unpack .../18-libfl-dev_2.6.4-6.2_amd64.deb ...
+Unpacking libfl-dev:amd64 (2.6.4-6.2) ...
+Selecting previously unselected package libgetopt-long-descriptive-perl.
+Preparing to unpack .../19-libgetopt-long-descriptive-perl_0.104-1_all.deb ...
+Unpacking libgetopt-long-descriptive-perl (0.104-1) ...
+Selecting previously unselected package libsort-versions-perl.
+Preparing to unpack .../20-libsort-versions-perl_1.62-1_all.deb ...
+Unpacking libsort-versions-perl (1.62-1) ...
+Selecting previously unselected package libgit-wrapper-perl.
+Preparing to unpack .../21-libgit-wrapper-perl_0.048-1_all.deb ...
+Unpacking libgit-wrapper-perl (0.048-1) ...
+Selecting previously unselected package libhttp-tiny-multipart-perl.
+Preparing to unpack .../22-libhttp-tiny-multipart-perl_0.08-1_all.deb ...
+Unpacking libhttp-tiny-multipart-perl (0.08-1) ...
+Selecting previously unselected package libio-prompter-perl.
+Preparing to unpack .../23-libio-prompter-perl_0.004015-1_all.deb ...
+Unpacking libio-prompter-perl (0.004015-1) ...
+Selecting previously unselected package libjson-perl.
+Preparing to unpack .../24-libjson-perl_4.02000-2_all.deb ...
+Unpacking libjson-perl (4.02000-2) ...
+Selecting previously unselected package liblog-any-perl.
+Preparing to unpack .../25-liblog-any-perl_1.708-1_all.deb ...
+Unpacking liblog-any-perl (1.708-1) ...
+Selecting previously unselected package liblog-any-adapter-screen-perl.
+Preparing to unpack .../26-liblog-any-adapter-screen-perl_0.140-1_all.deb ...
+Unpacking liblog-any-adapter-screen-perl (0.140-1) ...
+Selecting previously unselected package libgitlab-api-v4-perl.
+Preparing to unpack .../27-libgitlab-api-v4-perl_0.25-1_all.deb ...
+Unpacking libgitlab-api-v4-perl (0.25-1) ...
+Selecting previously unselected package libhash-fieldhash-perl.
+Preparing to unpack .../28-libhash-fieldhash-perl_0.15-1build2_amd64.deb ...
+Unpacking libhash-fieldhash-perl (0.15-1build2) ...
+Selecting previously unselected package libtypes-serialiser-perl.
+Preparing to unpack .../29-libtypes-serialiser-perl_1.0-1_all.deb ...
+Unpacking libtypes-serialiser-perl (1.0-1) ...
+Selecting previously unselected package libjson-xs-perl.
+Preparing to unpack .../30-libjson-xs-perl_4.020-1build1_amd64.deb ...
+Unpacking libjson-xs-perl (4.020-1build1) ...
+Selecting previously unselected package libobject-id-perl.
+Preparing to unpack .../31-libobject-id-perl_0.1.2-2ubuntu1_all.deb ...
+Unpacking libobject-id-perl (0.1.2-2ubuntu1) ...
+Selecting previously unselected package libmoox-struct-perl.
+Preparing to unpack .../32-libmoox-struct-perl_0.017-1_all.deb ...
+Unpacking libmoox-struct-perl (0.017-1) ...
+Selecting previously unselected package libnumber-range-perl.
+Preparing to unpack .../33-libnumber-range-perl_0.12-1_all.deb ...
+Unpacking libnumber-range-perl (0.12-1) ...
+Selecting previously unselected package libpath-iterator-rule-perl.
+Preparing to unpack .../34-libpath-iterator-rule-perl_1.014-1_all.deb ...
+Unpacking libpath-iterator-rule-perl (1.014-1) ...
+Selecting previously unselected package libpod-constants-perl.
+Preparing to unpack .../35-libpod-constants-perl_0.19-1_all.deb ...
+Unpacking libpod-constants-perl (0.19-1) ...
+Selecting previously unselected package libre-engine-re2-perl.
+Preparing to unpack .../36-libre-engine-re2-perl_0.13-5_amd64.deb ...
+Unpacking libre-engine-re2-perl (0.13-5) ...
+Selecting previously unselected package libregexp-pattern-license-perl.
+Preparing to unpack .../37-libregexp-pattern-license-perl_3.2.0-1_all.deb ...
+Unpacking libregexp-pattern-license-perl (3.2.0-1) ...
+Selecting previously unselected package libregexp-pattern-perl.
+Preparing to unpack .../38-libregexp-pattern-perl_0.2.12-1_all.deb ...
+Unpacking libregexp-pattern-perl (0.2.12-1) ...
+Selecting previously unselected package libssl-dev:amd64.
+Preparing to unpack .../39-libssl-dev_1.1.1f-1ubuntu2_amd64.deb ...
+Unpacking libssl-dev:amd64 (1.1.1f-1ubuntu2) ...
+Selecting previously unselected package libstring-copyright-perl.
+Preparing to unpack .../40-libstring-copyright-perl_0.003006-1_all.deb ...
+Unpacking libstring-copyright-perl (0.003006-1) ...
+Selecting previously unselected package libstring-escape-perl.
+Preparing to unpack .../41-libstring-escape-perl_2010.002-2_all.deb ...
+Unpacking libstring-escape-perl (2010.002-2) ...
+Selecting previously unselected package libstring-shellquote-perl.
+Preparing to unpack .../42-libstring-shellquote-perl_1.04-1_all.deb ...
+Unpacking libstring-shellquote-perl (1.04-1) ...
+Selecting previously unselected package libterm-readkey-perl.
+Preparing to unpack .../43-libterm-readkey-perl_2.38-1build1_amd64.deb ...
+Unpacking libterm-readkey-perl (2.38-1build1) ...
+Selecting previously unselected package licensecheck.
+Preparing to unpack .../44-licensecheck_3.0.45-1_all.deb ...
+Unpacking licensecheck (3.0.45-1) ...
+Selecting previously unselected package python3-unidiff.
+Preparing to unpack .../45-python3-unidiff_0.5.5-2_all.deb ...
+Unpacking python3-unidiff (0.5.5-2) ...
+Selecting previously unselected package python3-magic.
+Preparing to unpack .../46-python3-magic_2%3a0.4.15-3_all.deb ...
+Unpacking python3-magic (2:0.4.15-3) ...
+Setting up libstring-escape-perl (2010.002-2) ...
+Setting up wdiff (1.2.2-2build1) ...
+Setting up flex (2.6.4-6.2) ...
+Setting up libnumber-range-perl (0.12-1) ...
+Setting up libregexp-pattern-perl (0.2.12-1) ...
+Setting up libwant-perl (0.29-1build4) ...
+Setting up libdistro-info-perl (0.23ubuntu1) ...
+Setting up liblog-any-perl (1.708-1) ...
+Setting up libpod-constants-perl (0.19-1) ...
+Setting up libcommon-sense-perl (3.74-2build6) ...
+Setting up libpath-iterator-rule-perl (1.014-1) ...
+Setting up libhttp-tiny-multipart-perl (0.08-1) ...
+Setting up libstring-shellquote-perl (1.04-1) ...
+Setting up dput (1.0.3ubuntu1) ...
+Setting up liberror-perl (0.17029-1) ...
+Setting up devscripts (2.20.2ubuntu2) ...
+Setting up libstring-copyright-perl (0.003006-1) ...
+Setting up libhash-fieldhash-perl (0.15-1build2) ...
+Setting up libssl-dev:amd64 (1.1.1f-1ubuntu2) ...
+Setting up libfl2:amd64 (2.6.4-6.2) ...
+Setting up libarray-intspan-perl (2.003-1) ...
+Setting up libcontextual-return-perl (0.004014-2) ...
+Setting up libconst-fast-perl (0.014-1) ...
+Setting up libtypes-serialiser-perl (1.0-1) ...
+Setting up libgetopt-long-descriptive-perl (0.104-1) ...
+Setting up libfile-chdir-perl (0.1008-1) ...
+Setting up libjson-perl (4.02000-2) ...
+Setting up liblog-any-adapter-screen-perl (0.140-1) ...
+Setting up bison (2:3.5.1+dfsg-1) ...
+update-alternatives: using /usr/bin/bison.yacc to provide /usr/bin/yacc (yacc) in auto mode
+Setting up git-man (1:2.25.1-1ubuntu3) ...
+Setting up python3-unidiff (0.5.5-2) ...
+Setting up libsort-versions-perl (1.62-1) ...
+Setting up libre-engine-re2-perl (0.13-5) ...
+Setting up libterm-readkey-perl (2.38-1build1) ...
+Setting up python3-magic (2:0.4.15-3) ...
+Setting up dctrl-tools (2.24-3) ...
+Setting up libjson-xs-perl (4.020-1build1) ...
+Setting up libio-prompter-perl (0.004015-1) ...
+Setting up at (3.1.23-1ubuntu1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/atd.service → /lib/systemd/system/atd.service.
+Setting up libobject-id-perl (0.1.2-2ubuntu1) ...
+Setting up libgitlab-api-v4-perl (0.25-1) ...
+Setting up libregexp-pattern-license-perl (3.2.0-1) ...
+Setting up libmoox-struct-perl (0.017-1) ...
+Setting up libfl-dev:amd64 (2.6.4-6.2) ...
+Setting up git (1:2.25.1-1ubuntu3) ...
+Setting up libgit-wrapper-perl (0.048-1) ...
+Setting up licensecheck (3.0.45-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9) ...
+Processing triggers for systemd (245.4-4ubuntu3.2) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for install-info (6.7.0.dfsg.2-5) ...
+Processing triggers for doc-base (0.10.9) ...
+Processing 1 added doc-base file...
+jack@jack:~$ apt-get install tinc
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+jack@jack:~$ sudo apt-get install tinc
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+tinc is already the newest version (1.0.36-1).
+The following packages were automatically installed and are no longer required:
+  gir1.2-geocodeglib-1.0 gnome-software-common kpeople-vcard libcodec2-0.8.1
+  libenchant1c2a libfakekey0 libfprint-2-tod1 libgit2-27 libgweather-3-15 libilmbase23
+  libkf5pulseaudioqt2 liblivemedia64 libtss2-udev python3-click python3-colorama
+  qml-module-org-kde-people qtcore4-l10n
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 10 not upgraded.
+jack@jack:~$  deb http://debian.sdinet.de/ stable chaosvpn
+
+Command 'deb' not found, did you mean:
+
+  command 'deb3' from deb quilt (0.65-3)
+  command 'debc' from deb devscripts (2.20.2ubuntu2)
+  command 'dex' from deb dex (0.8.0-2)
+  command 'debi' from deb devscripts (2.20.2ubuntu2)
+  command 'derb' from deb icu-devtools (66.1-2ubuntu2)
+  command 'dep' from deb go-dep (0.5.4-3)
+  command 'dub' from deb dub (1.19.0-1build2)
+  command 'edb' from deb edb-debugger (1.0.0-1build3)
+  command 'dab' from deb bsdgames (2.17-28build1)
+
+Try: sudo apt install <deb name>
+
+jack@jack:~$  deb-src http://debian.sdinet.de/ stable chaosvpn
+deb-src: command not found
+jack@jack:~$  apt-get update
+Reading package lists... Done
+E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)
+E: Unable to lock directory /var/lib/apt/lists/
+W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)
+W: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)
+jack@jack:~$ sudo  apt-get update
+Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease                                    
+Ign:3 http://ppa.launchpad.net/webupd8team/tor-browser/ubuntu focal InRelease             
+Get:4 http://archive.ubuntu.com/ubuntu focal-updates InRelease [111 kB]
+Err:5 http://ppa.launchpad.net/webupd8team/tor-browser/ubuntu focal Release        
+  404  Not Found [IP: 91.189.95.83 80]
+Get:6 http://archive.ubuntu.com/ubuntu focal-backports InRelease [98.3 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal-security InRelease [107 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal-proposed InRelease [265 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 DEP-11 Metadata [196 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 DEP-11 Metadata [184 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 DEP-11 Metadata [2,468 B]
+Get:12 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 DEP-11 Metadata [1,972 B]
+Get:13 http://archive.ubuntu.com/ubuntu focal-security/main amd64 DEP-11 Metadata [24.3 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-security/universe amd64 DEP-11 Metadata [52.3 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal-proposed/main amd64 DEP-11 Metadata [22.6 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal-proposed/universe amd64 DEP-11 Metadata [29.6 kB]
+Reading package lists... Done                                                
+E: The repository 'http://ppa.launchpad.net/webupd8team/tor-browser/ubuntu focal Release' does not have a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+jack@jack:~$ sudo  apt-get update
+Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
+Ign:2 http://ppa.launchpad.net/webupd8team/tor-browser/ubuntu focal InRelease             
+Hit:3 http://archive.ubuntu.com/ubuntu focal InRelease                                    
+Hit:4 http://archive.ubuntu.com/ubuntu focal-updates InRelease           
+Err:5 http://ppa.launchpad.net/webupd8team/tor-browser/ubuntu focal Release
+  404  Not Found [IP: 91.189.95.83 80]
+Hit:6 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:7 http://archive.ubuntu.com/ubuntu focal-security InRelease
+Hit:8 http://archive.ubuntu.com/ubuntu focal-proposed InRelease
+Reading package lists... Done
+E: The repository 'http://ppa.launchpad.net/webupd8team/tor-browser/ubuntu focal Release' does not have a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+jack@jack:~$ sudo apt-get install debian-sdinet-keyring
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package debian-sdinet-keyring
+jack@jack:~$  apt-get install chaosvpn
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+jack@jack:~$ sudo  apt-get install chaosvpn
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package chaosvpn
+jack@jack:~$ sudo apt-get install chaosvpn
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package chaosvpn
+jack@jack:~$ sudo deb http://debian.sdinet.de/ stable chaosvpn
+sudo: deb: command not found
+jack@jack:~$ deb http://debian.sdinet.de/ stable chaosvpn
+
+Command 'deb' not found, did you mean:
+
+  command 'dep' from deb go-dep (0.5.4-3)
+  command 'dab' from deb bsdgames (2.17-28build1)
+  command 'derb' from deb icu-devtools (66.1-2ubuntu2)
+  command 'dub' from deb dub (1.19.0-1build2)
+  command 'deb3' from deb quilt (0.65-3)
+  command 'dex' from deb dex (0.8.0-2)
+  command 'edb' from deb edb-debugger (1.0.0-1build3)
+  command 'debc' from deb devscripts (2.20.2ubuntu2)
+  command 'debi' from deb devscripts (2.20.2ubuntu2)
+
+Try: sudo apt install <deb name>
+
+jack@jack:~$ deb http://debian.sdinet.de/stable chaosvpn
+
+Command 'deb' not found, did you mean:
+
+  command 'debc' from deb devscripts (2.20.2ubuntu2)
+  command 'dep' from deb go-dep (0.5.4-3)
+  command 'dub' from deb dub (1.19.0-1build2)
+  command 'deb3' from deb quilt (0.65-3)
+  command 'edb' from deb edb-debugger (1.0.0-1build3)
+  command 'dab' from deb bsdgames (2.17-28build1)
+  command 'debi' from deb devscripts (2.20.2ubuntu2)
+  command 'derb' from deb icu-devtools (66.1-2ubuntu2)
+  command 'dex' from deb dex (0.8.0-2)
+
+Try: sudo apt install <deb name>
+
+jack@jack:~$ sudo gedit /ect/apt/sources.list
+jack@jack:~$ sudo apt-get update
+Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
+Ign:2 http://ppa.launchpad.net/webupd8team/tor-browser/ubuntu focal InRelease             
+Hit:3 http://archive.ubuntu.com/ubuntu focal InRelease                                    
+Hit:4 http://archive.ubuntu.com/ubuntu focal-updates InRelease                      
+Err:5 http://ppa.launchpad.net/webupd8team/tor-browser/ubuntu focal Release               
+  404  Not Found [IP: 91.189.95.83 80]
+Hit:6 http://archive.ubuntu.com/ubuntu focal-backports InRelease                          
+Hit:7 http://archive.ubuntu.com/ubuntu focal-security InRelease         
+Ign:8 http://debian.sdinet.de stable InRelease
+Hit:9 http://archive.ubuntu.com/ubuntu focal-proposed InRelease
+Get:10 http://debian.sdinet.de stable Release [33.2 kB]
+Get:11 http://debian.sdinet.de stable Release.gpg [833 B]
+Ign:11 http://debian.sdinet.de stable Release.gpg
+Reading package lists... Done
+E: The repository 'http://ppa.launchpad.net/webupd8team/tor-browser/ubuntu focal Release' does not have a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+W: GPG error: http://debian.sdinet.de stable Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 157614093BD8041F
+E: The repository 'http://debian.sdinet.de stable Release' is not signed.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+jack@jack:~$ sudo apt-get install debian-sdinet-keyring
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package debian-sdinet-keyring
+jack@jack:~$ sudo add-apt-repository ppa:matt-nycresistor/chaosvpn
+ chaosvpn ubuntu packaging
+ More info: https://launchpad.net/~matt-nycresistor/+archive/ubuntu/chaosvpn
+Press [ENTER] to continue or Ctrl-c to cancel adding it.
+
+Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
+Ign:2 http://debian.sdinet.de stable InRelease                                            
+Hit:3 http://archive.ubuntu.com/ubuntu focal InRelease                                    
+Ign:4 http://ppa.launchpad.net/matt-nycresistor/chaosvpn/ubuntu focal InRelease
+Get:5 http://debian.sdinet.de stable Release [33.2 kB]
+Hit:6 http://archive.ubuntu.com/ubuntu focal-updates InRelease                            
+Hit:7 http://archive.ubuntu.com/ubuntu focal-backports InRelease                          
+Ign:8 http://ppa.launchpad.net/webupd8team/tor-browser/ubuntu focal InRelease
+Get:9 http://debian.sdinet.de stable Release.gpg [833 B]                                  
+Hit:10 http://archive.ubuntu.com/ubuntu focal-security InRelease                          
+Hit:11 http://archive.ubuntu.com/ubuntu focal-proposed InRelease         
+Err:12 http://ppa.launchpad.net/matt-nycresistor/chaosvpn/ubuntu focal Release
+  404  Not Found [IP: 91.189.95.83 80]
+Ign:9 http://debian.sdinet.de stable Release.gpg
+Err:13 http://ppa.launchpad.net/webupd8team/tor-browser/ubuntu focal Release
+  404  Not Found [IP: 91.189.95.83 80]
+Reading package lists... Done
+E: The repository 'http://ppa.launchpad.net/matt-nycresistor/chaosvpn/ubuntu focal Release' does not have a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+W: GPG error: http://debian.sdinet.de stable Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 157614093BD8041F
+E: The repository 'http://debian.sdinet.de stable Release' is not signed.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+E: The repository 'http://ppa.launchpad.net/webupd8team/tor-browser/ubuntu focal Release' does not have a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+jack@jack:~$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 157614093BD8041F
+Executing: /tmp/apt-key-gpghome.Idd74cu40p/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys 157614093BD8041F
+gpg: key 157614093BD8041F: public key "debian.sdinet.de release signing key 2010 <debian@sdinet.de>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+jack@jack:~$ sudo apt-get update
+Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease                                    
+Ign:3 http://debian.sdinet.de stable InRelease                                            
+Hit:4 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Ign:5 http://ppa.launchpad.net/matt-nycresistor/chaosvpn/ubuntu focal InRelease
+Get:6 http://debian.sdinet.de stable Release [33.2 kB]
+Hit:7 http://archive.ubuntu.com/ubuntu focal-backports InRelease                          
+Hit:8 http://archive.ubuntu.com/ubuntu focal-security InRelease                           
+Ign:9 http://ppa.launchpad.net/webupd8team/tor-browser/ubuntu focal InRelease
+Get:10 http://debian.sdinet.de stable Release.gpg [833 B]           
+Hit:11 http://archive.ubuntu.com/ubuntu focal-proposed InRelease                          
+Err:12 http://ppa.launchpad.net/matt-nycresistor/chaosvpn/ubuntu focal Release
+  404  Not Found [IP: 91.189.95.83 80]
+Err:13 http://ppa.launchpad.net/webupd8team/tor-browser/ubuntu focal Release
+  404  Not Found [IP: 91.189.95.83 80]
+Get:14 http://debian.sdinet.de stable/chaosvpn Sources [2,097 B]
+Get:15 http://debian.sdinet.de stable/chaosvpn i386 Packages [1,783 B]
+Get:16 http://debian.sdinet.de stable/chaosvpn amd64 Packages [1,790 B]
+Reading package lists... Done
+E: The repository 'http://ppa.launchpad.net/matt-nycresistor/chaosvpn/ubuntu focal Release' does not have a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+E: The repository 'http://ppa.launchpad.net/webupd8team/tor-browser/ubuntu focal Release' does not have a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+jack@jack:~$ sudo apt-get install chaosvpn
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  gir1.2-geocodeglib-1.0 gnome-software-common kpeople-vcard libcodec2-0.8.1
+  libenchant1c2a libfakekey0 libfprint-2-tod1 libgit2-27 libgweather-3-15 libilmbase23
+  libkf5pulseaudioqt2 liblivemedia64 libtss2-udev python3-click python3-colorama
+  qml-module-org-kde-people qtcore4-l10n
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  chaosvpn
+0 upgraded, 1 newly installed, 0 to remove and 10 not upgraded.
+Need to get 204 kB of archives.
+After this operation, 544 kB of additional disk space will be used.
+Get:1 http://debian.sdinet.de stable/chaosvpn amd64 chaosvpn amd64 2.20~dev+00015-0.0~deb10 [204 kB]
+Fetched 204 kB in 1s (220 kB/s)   
+Selecting previously unselected package chaosvpn.
+(Reading database ... 522337 files and directories currently installed.)
+Preparing to unpack .../chaosvpn_2.20~dev+00015-0.0~deb10_amd64.deb ...
+Unpacking chaosvpn (2.20~dev+00015-0.0~deb10) ...
+Setting up chaosvpn (2.20~dev+00015-0.0~deb10) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for systemd (245.4-4ubuntu3.2) ...
+jack@jack:~$ tincd --net=chaos --generate-keys=2048
+Cannot open config file /etc/tinc/chaos/tinc.conf: No such file or directory
+Failed to read `/etc/tinc/chaos/tinc.conf': No such file or directory
+Generating 2048 bits keys:
+......................................................................................+++++ p
+..........................................+++++ q
+Done.
+Please enter a file to save private RSA key to [/etc/tinc/chaos/rsa_key.priv]: Error while reading stdin: No such file or directory
+jack@jack:~$ mkdir /etc/tinc/chaos/
+mkdir: cannot create directory ‘/etc/tinc/chaos/’: File exists
+jack@jack:~$ sudo mkdir /etc/tinc/chaos/
+mkdir: cannot create directory ‘/etc/tinc/chaos/’: File exists
+jack@jack:~$ sudo mv /etc/tinc/chaos/
+mv: missing destination file operand after '/etc/tinc/chaos/'
+Try 'mv --help' for more information.
+jack@jack:~$ sudo rm /etc/tinc/chaos/
+rm: cannot remove '/etc/tinc/chaos/': Is a directory
+jack@jack:~$ sudo rm -r /etc/tinc/chaos/
+jack@jack:~$ sudo mkdir /etc/tinc/chaos/
+jack@jack:~$ tincd --net=chaos --generate-keys=2048
+Cannot open config file /etc/tinc/chaos/tinc.conf: No such file or directory
+Failed to read `/etc/tinc/chaos/tinc.conf': No such file or directory
+Generating 2048 bits keys:
+.................+++++ p
+.................................+++++ q
+Done.
+Please enter a file to save private RSA key to [/etc/tinc/chaos/rsa_key.priv]: 
+Error opening file `/etc/tinc/chaos/rsa_key.priv': Permission denied
+jack@jack:~$ 
+jack@jack:~$ tincd --net=chaos --generate-keys=2048
+Cannot open config file /etc/tinc/chaos/tinc.conf: No such file or directory
+Failed to read `/etc/tinc/chaos/tinc.conf': No such file or directory
+Generating 2048 bits keys:
+.........................................................................+++++ p
+......................................................+++++ q
+Done.
+Please enter a file to save private RSA key to [/etc/tinc/chaos/rsa_key.priv]: /etc/tinc/chaos/rsa_key.priv and rsa_key.pub
+Error opening file `/etc/tinc/chaos/rsa_key.priv and rsa_key.pub': Permission denied
+jack@jack:~$ sudo tincd --net=chaos --generate-keys=2048
+Cannot open config file /etc/tinc/chaos/tinc.conf: No such file or directory
+Failed to read `/etc/tinc/chaos/tinc.conf': No such file or directory
+Generating 2048 bits keys:
+..........+++++ p
+..............................................+++++ q
+Done.
+Please enter a file to save private RSA key to [/etc/tinc/chaos/rsa_key.priv]: /etc/tinc/chaos/rsa_key.priv and rsa_key.pub
+Please enter a file to save public RSA key to [/etc/tinc/chaos/rsa_key.pub]: 
+jack@jack:~$ /etc/init.d/chaosvpn start
+Starting chaosvpn (via systemctl): chaosvpn.serviceFailed to start chaosvpn.service: Access denied
+See system logs and 'systemctl status chaosvpn.service' for details.
+ failed!
+
+
+
